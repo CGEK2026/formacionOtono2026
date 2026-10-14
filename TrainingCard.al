@@ -30,8 +30,12 @@ page 50101 "Training Card"
             }
             group(TrainingDetails)
             {
-                CaptionML = ENU = 'Training Details', ESP = 'Detalles de entrenamiento';
-                field("Language Code"; Rec."Language Code") { }
+                CaptionML = ENU = 'Training Details', ESP = 'Detalles formativos';
+                field("Language Code"; Rec."Language Code")
+                {
+
+                    Importance = Additional;
+                }
                 field("Duration (hours)"; Rec."Duration (hours)")
                 {
 
@@ -39,6 +43,11 @@ page 50101 "Training Card"
                 }
                 field("No. of Sessions"; Rec."No. of Sessions") { }
                 field("Hours per Sessions"; Rec."Hours per session") { }
+
+            }
+            part(TrainingEditions; "Training Editions")
+            {
+                SubPageLink = "Training No." = field("No.");
 
             }
             group(Invoicing)
