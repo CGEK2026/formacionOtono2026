@@ -37,11 +37,25 @@ page 50100 "Training List"
 
         area(FactBoxes)
         {
-            part(TrainingEditionsFactBox; "Training Editions")
+            part(TrainingEditionsFactBox; "Training Editions Factbox")
             {
                 SubPageLink = "Training No." = field("No.");
             }
         }
 
+    }
+
+    actions
+    {
+        area(Processing)
+        {
+            action(Editions)
+            {
+                CaptionML = ENU = 'Editions', ESP = 'Edición';
+
+                RunObject = page "Training Editions";
+                RunPageLink = "Training No." = field("No.");
+            }
+        }
     }
 }

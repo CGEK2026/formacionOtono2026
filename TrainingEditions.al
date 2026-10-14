@@ -1,7 +1,7 @@
 page 50102 "Training Editions"
 {
     CaptionML = ENU = 'Training Edition', ESP = 'Edición formación';
-    PageType = ListPart;
+    PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "Training Edition";
