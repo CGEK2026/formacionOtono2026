@@ -36,13 +36,13 @@ table 50101 "Training Edition"
                 UnknownType: TextConst ENU = 'Unknown Type %1', ESP = 'Tipo %1 desconocido';
 
             begin
-                case Rec.Type of
-                    Rec.Type::" ":
+                case Rec."Type (Enum)" of
+                    Rec."Type (Enum)"::" ":
                         if Rec."Max. students" > 0 then
                             Error(SelectType);
-                    Rec.Type::"Instructor-Lead":
+                    Rec."Type (Enum)"::"Instructor-Lead":
                         ;
-                    Rec.Type::"Video Tutorial":
+                    Rec."Type (Enum)"::"Video Tutorial":
                         if Rec."Max. students" <> 0 then
                             Error(MaxSXtudentsNotAllowedOnVideoTutorial);
                     else
@@ -58,6 +58,10 @@ table 50101 "Training Edition"
             CaptionML = ENU = 'Type', ESP = 'Tipo';
             OptionMembers = " ","Instructor-Lead","Video Tutorial";
             OptionCaptionML = ENU = ' ,Instructor-Lead, Video Tutorial', ESP = ' , Guiado por profesor, Video tutorial';
+        }
+        field(7; "Type (Enum)"; Enum "Edition Type")
+        {
+            CaptionML = ENU = 'Type (Enum)', ESP = 'Tipo (Enum)';
         }
     }
 
