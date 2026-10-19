@@ -17,6 +17,7 @@ page 50102 "Training Editions"
                     Visible = false;
                 }
                 field("Edition"; Rec.Edition) { }
+                field(Type; Rec.Type) { }
                 field("Start Date"; Rec."Start Date") { }
                 field("End Date"; Rec."End Date") { }
                 field("Max. students"; Rec."Max. students") { }
