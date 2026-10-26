@@ -1,0 +1,39 @@
+{
+    "name": "Excepciones de normas de analizadores",
+    "rules": [{
+        "id": "AA0218",
+        "action": "None",
+        "justification": "ToolTip"
+    },
+{
+    "id": "AS0051",
+    "action": "None",
+    "justification": "AppSource"
+},
+{
+    "id": "AS0052",
+    "action": "None",
+    "justification": "AppSource"
+},
+{
+    "id": "AS0084",
+    "action": "None",
+    "justification": "Rango de numeracion de AppSource"
+},
+{
+    "id": "AS0092",
+    "action": "None",
+    "justification": "Telemetria Azure AppSource"
+},
+{
+    "id": "AS0054",
+    "action": "None",
+    "justification": "Prefijo AppSource"
+},
+{
+    "id": "AS0015",
+    "action": "Warning",
+    "justification": "Temporal"
+}
+]
+}

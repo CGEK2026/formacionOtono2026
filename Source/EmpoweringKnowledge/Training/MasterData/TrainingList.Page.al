@@ -1,6 +1,10 @@
+namespace EmpoweringKnowledge.Training.MasterData;
+
+using Microsoft.Sales.Customer;
+
 page 50100 "Training List"
 {
-    CaptionML = ENU = 'Trainings', ESP = 'Formaciones';
+    Caption = 'Trainings', Comment = 'ESP = "Formaciones"';
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
@@ -51,10 +55,11 @@ page 50100 "Training List"
         {
             action(Editions)
             {
-                CaptionML = ENU = 'Editions', ESP = 'Edición';
+                Caption = 'Editions', Comment = 'ESP = "Edición"';
 
                 RunObject = page "Training Editions";
                 RunPageLink = "Training No." = field("No.");
+                Image = EditList;
             }
         }
     }

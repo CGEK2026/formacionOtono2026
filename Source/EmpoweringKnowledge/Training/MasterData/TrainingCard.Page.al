@@ -1,6 +1,8 @@
+namespace EmpoweringKnowledge.Training.MasterData;
+
 page 50101 "Training Card"
 {
-    CaptionML = ENU = 'Training Card', ESP = 'Ficha formación';
+    Caption = 'Training Card', Comment = 'ESP = "Ficha formación"';
     PageType = Card;
     ApplicationArea = All;
     // Categoria que se ve en el buscador
@@ -15,9 +17,16 @@ page 50101 "Training Card"
         {
             group(General)
             {
-                CaptionML = ENU = 'General', ESP = 'General';
+                Caption = 'General', Comment = 'ESP = "General"';
 
-                field("No."; Rec."No.") { }
+                field("No."; Rec."No.")
+                {
+                    trigger OnAssistEdit()
+                    begin
+                        if Rec.AssistEdit(xRec) then
+                            CurrPage.Update();
+                    end;
+                }
                 field(Name; Rec.Name)
                 {
                     Importance = Promoted;
@@ -30,7 +39,7 @@ page 50101 "Training Card"
             }
             group(TrainingDetails)
             {
-                CaptionML = ENU = 'Training Details', ESP = 'Detalles formativos';
+                Caption = 'Training Details', Comment = 'ESP = "Detalles formativos"';
                 field("Language Code"; Rec."Language Code")
                 {
 
@@ -52,7 +61,7 @@ page 50101 "Training Card"
             }
             group(Invoicing)
             {
-                CaptionML = ENU = 'Invoicing', ESP = 'Facturación';
+                Caption = 'Invoicing', Comment = 'ESP = "Facturación"';
                 field("Price"; Rec.Price) { }
 
             }

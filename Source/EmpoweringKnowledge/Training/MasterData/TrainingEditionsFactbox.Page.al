@@ -1,6 +1,8 @@
+namespace EmpoweringKnowledge.Training.MasterData;
+
 page 50103 "Training Editions Factbox"
 {
-    CaptionML = ENU = 'Training Edition', ESP = 'Edición formación';
+    Caption = 'Training Edition', Comment = 'ESP = "Edición formación"';
     PageType = ListPart;
     ApplicationArea = All;
     UsageCategory = Lists;
