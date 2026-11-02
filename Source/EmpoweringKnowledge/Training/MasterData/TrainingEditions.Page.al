@@ -2,7 +2,7 @@ namespace EmpoweringKnowledge.Training.MasterData;
 
 page 50102 "Training Editions"
 {
-    Caption = 'Training Edition', Comment = 'ESP = "Edición formación"';
+    Caption = 'Training Edition', Comment = 'ESP="Edición formación"';
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;

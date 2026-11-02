@@ -5,7 +5,7 @@ using EmpoweringKnowledge.Training.Setup;
 
 permissionset 50100 "Super Training"
 {
-    Caption = 'Super Training', Comment = 'ESP = "SUPER Formaciones"';
+    Caption = 'Super Training', Comment = 'ESP="SUPER Formaciones"';
     Assignable = true;
     Permissions = // Read, Insert, Mod, Delete
  tabledata Training = RIMD,

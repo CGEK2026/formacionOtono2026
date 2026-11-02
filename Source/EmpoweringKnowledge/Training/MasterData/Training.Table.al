@@ -6,7 +6,7 @@ using System.Globalization;
 
 table 50100 Training
 {
-    Caption = 'Training', Comment = 'ESP = "Formación"';
+    Caption = 'Training', Comment = 'ESP="Formación"';
     DataClassification = CustomerContent;
     fields
     {
@@ -14,8 +14,8 @@ table 50100 Training
         {
             // Uso de RegEx
             // (.*)ML = ENU = '(.*)', ESP = '(.*)';
-            // $1 = '$2', Comment = 'ESP = "$3"';
-            Caption = 'No.', Comment = 'ESP = "Núm."';
+            // $1 = '$2', Comment = 'ESP="$3"';
+            Caption = 'No.', Comment = 'ESP="Núm."';
             // Caption = 'No.', Locked = true;
             // Caption = 'No.', MaxLength = 100;
             // * Poner la traduccion en el comentario para pasarla al fichero final.
@@ -44,25 +44,25 @@ table 50100 Training
         }
         field(2; Name; text[100])
         {
-            Caption = 'Name', Comment = 'ESP = "Nombre"';
+            Caption = 'Name', Comment = 'ESP="Nombre"';
 
         }
         field(3; Price; Decimal)
         {
             DecimalPlaces = 2 : 2;
             BlankZero = true;
-            Caption = 'Price', Comment = 'ESP = "Precio"';
+            Caption = 'Price', Comment = 'ESP="Precio"';
 
         }
         field(4; Blocked; Boolean)
         {
-            Caption = 'Blocked', Comment = 'ESP = "Bloqueado"';
+            Caption = 'Blocked', Comment = 'ESP="Bloqueado"';
 
         }
         field(5; "Language Code"; Code[10])
         {
             TableRelation = Language;
-            Caption = 'Language Code', Comment = 'ESP = "Cód. idioma"';
+            Caption = 'Language Code', Comment = 'ESP="Cód. idioma"';
 
         }
         field(6; "Duration (hours)"; Decimal)
@@ -70,7 +70,7 @@ table 50100 Training
             MinValue = 0;
             DecimalPlaces = 0 : 2;
             BlankZero = true;
-            Caption = 'Duration (hours)', Comment = 'ESP = "Duración (horas)"';
+            Caption = 'Duration (hours)', Comment = 'ESP="Duración (horas)"';
 
 
             trigger OnValidate()
@@ -83,7 +83,7 @@ table 50100 Training
             MinValue = 0;
             InitValue = 1;
             BlankZero = true;
-            Caption = 'No. of sessions', Comment = 'ESP = "Núm. de sesiones"';
+            Caption = 'No. of sessions', Comment = 'ESP="Núm. de sesiones"';
 
 
             trigger OnValidate()
@@ -97,7 +97,7 @@ table 50100 Training
             DecimalPlaces = 0 : 2;
             BlankZero = true;
             Editable = false;
-            Caption = 'Hours per session', Comment = 'ESP = "Horas por sesión"';
+            Caption = 'Hours per session', Comment = 'ESP="Horas por sesión"';
 
 
             trigger OnValidate()
@@ -105,7 +105,7 @@ table 50100 Training
                 // Se usa Label
                 // HoursCannotBeNegativeErr: TextConst ESP = 'Las horas por sesiones (%1) no puede ser negativas',
                 //  ENU = 'The hours per session (%1) can not be negative';
-                HoursCannotBeNegativeErr: Label 'The hours per session (%1) can not be negative', Comment = 'ESP= Las horas por sesiones (%1) no puede ser negativas';
+                HoursCannotBeNegativeErr: Label 'The hours per session (%1) can not be negative', Comment = 'ESP="Las horas por sesiones (%1) no puede ser negativas"';
 
             begin
                 if Rec."Hours per session" < 0 then

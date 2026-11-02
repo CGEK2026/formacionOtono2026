@@ -2,7 +2,7 @@ namespace EmpoweringKnowledge.Training.MasterData;
 
 page 50101 "Training Card"
 {
-    Caption = 'Training Card', Comment = 'ESP = "Ficha formación"';
+    Caption = 'Training Card', Comment = 'ESP="Ficha formación"';
     PageType = Card;
     ApplicationArea = All;
     // Categoria que se ve en el buscador
@@ -17,7 +17,7 @@ page 50101 "Training Card"
         {
             group(General)
             {
-                Caption = 'General', Comment = 'ESP = "General"';
+                Caption = 'General', Comment = 'ESP="General"';
 
                 field("No."; Rec."No.")
                 {
@@ -39,7 +39,7 @@ page 50101 "Training Card"
             }
             group(TrainingDetails)
             {
-                Caption = 'Training Details', Comment = 'ESP = "Detalles formativos"';
+                Caption = 'Training Details', Comment = 'ESP="Detalles formativos"';
                 field("Language Code"; Rec."Language Code")
                 {
 
@@ -61,7 +61,7 @@ page 50101 "Training Card"
             }
             group(Invoicing)
             {
-                Caption = 'Invoicing', Comment = 'ESP = "Facturación"';
+                Caption = 'Invoicing', Comment = 'ESP="Facturación"';
                 field("Price"; Rec.Price) { }
 
             }

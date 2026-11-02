@@ -4,7 +4,7 @@ using Microsoft.Sales.Customer;
 
 page 50100 "Training List"
 {
-    Caption = 'Trainings', Comment = 'ESP = "Formaciones"';
+    Caption = 'Trainings', comment = 'ESP="Formaciones"';
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Lists;
@@ -51,15 +51,21 @@ page 50100 "Training List"
 
     actions
     {
+        area(Promoted)
+        {
+            actionref(EditionsPromoted; Editions) { }
+        }
         area(Processing)
         {
-            action(Editions)
+            group(UnGrupo)
             {
-                Caption = 'Editions', Comment = 'ESP = "Edición"';
-
-                RunObject = page "Training Editions";
-                RunPageLink = "Training No." = field("No.");
-                Image = EditList;
+                action(Editions)
+                {
+                    Caption = 'Editions', Comment = 'ESP="Edición"';
+                    RunObject = page "Training Editions";
+                    RunPageLink = "Training No." = field("No.");
+                    Image = EditList;
+                }
             }
         }
     }
