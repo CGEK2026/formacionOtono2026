@@ -37,9 +37,9 @@ table 50101 "Training Edition"
                 // MaxSXtudentsNotAllowedOnVideoTutorialErr: TextConst ENU = 'Cannot have Max. Students on a VCideo Tutorial',
                 //                                                 ESP = 'No se puede especificar Máx. alumnos para un Vídeo tutorial';
                 // UnknownTypeErr: TextConst ENU = 'Unknown Type %1', ESP = 'Tipo %1 desconocido';
-                SelectTypeErr: Label 'Max. Students cannot be set if Type is not specified', Comment = 'ESP = No se puede especificar Máx. alumnos si no se establece el Tipo';
-                MaxSXtudentsNotAllowedOnVideoTutorialErr: Label 'Cannot have Max. Students on a VCideo Tutorial', Comment = 'ESP = No se puede especificar Máx. alumnos para un Vídeo tutorial';
-                UnknownTypeErr: Label 'Unknown Type %1', Comment = 'ESP = Tipo %1 desconocido';
+                SelectTypeErr: Label 'Max. Students cannot be set if Type is not specified', Comment = 'ESP = "No se puede especificar Máx. alumnos si no se establece el Tipo"';
+                MaxSXtudentsNotAllowedOnVideoTutorialErr: Label 'Cannot have Max. Students on a VCideo Tutorial', Comment = 'ESP = "No se puede especificar Máx. alumnos para un Vídeo tutorial"';
+                UnknownTypeErr: Label 'Unknown Type %1', Comment = 'ESP = "Tipo %1 desconocido"';
 
             begin
                 case Rec."Type (Enum)" of

@@ -1,8 +1,9 @@
 namespace EmpoweringKnowledge.Training.MasterData;
 
+using EmpoweringKnowledge.Training.Setup;
 using Microsoft.Foundation.NoSeries;
-using Microsoft.Projects.Resources.Setup;
 using System.Globalization;
+
 table 50100 Training
 {
     Caption = 'Training', Comment = 'ESP = "Formación"';
@@ -22,7 +23,7 @@ table 50100 Training
 
             trigger OnValidate()
             var
-                ResourcesSetup: Record "Resources Setup";
+                TrainingSetup: Record "Training Setup";
                 NoSeries: Codeunit "No. Series";
                 IsHandled: Boolean;
 
@@ -34,8 +35,8 @@ table 50100 Training
                     exit;
 
                 if "No." <> xRec."No." then begin
-                    ResourcesSetup.Get();
-                    NoSeries.TestManual(ResourcesSetup."Resource Nos.");
+                    TrainingSetup.Get();
+                    NoSeries.TestManual(TrainingSetup."Training Nos.");
                     "No. Series" := '';
                 end;
             end;
@@ -124,7 +125,7 @@ table 50100 Training
     trigger OnInsert()
     var
         Training: Record Training;
-        ResourcesSetup: Record "Resources Setup";
+        TrainingSetup: Record "Training Setup";
         NoSeries: Codeunit "No. Series";
         IsHandled: Boolean;
     begin
@@ -134,9 +135,9 @@ table 50100 Training
             exit;
 
         if "No." = '' then begin
-            ResourcesSetup.Get();
-            ResourcesSetup.TestField("Resource Nos.");
-            "No. Series" := ResourcesSetup."Resource Nos.";
+            TrainingSetup.Get();
+            TrainingSetup.TestField("Training Nos.");
+            "No. Series" := TrainingSetup."Training Nos.";
             if NoSeries.AreRelated("No. Series", xRec."No. Series") then
                 "No. Series" := xRec."No. Series";
             "No." := NoSeries.GetNextNo("No. Series");
@@ -169,7 +170,7 @@ table 50100 Training
     procedure AssistEdit(OldTraining: Record Training) Result: Boolean
     var
         Training: Record Training;
-        ResourcesSetup: Record "Resources Setup";
+        TrainingSetup: Record "Training Setup";
         NoSeries: Codeunit "No. Series";
         IsHandled: Boolean;
     begin
@@ -179,9 +180,9 @@ table 50100 Training
             exit(Result);
 
         Training := Rec;
-        ResourcesSetup.Get();
-        ResourcesSetup.TestField("Resource Nos.");
-        if NoSeries.LookupRelatedNoSeries(ResourcesSetup."Resource Nos.", OldTraining."No. Series", Training."No. Series") then begin
+        TrainingSetup.Get();
+        TrainingSetup.TestField("Training Nos.");
+        if NoSeries.LookupRelatedNoSeries(TrainingSetup."Training Nos.", OldTraining."No. Series", Training."No. Series") then begin
             Training."No." := NoSeries.GetNextNo(Training."No. Series");
             Rec := Training;
             exit(true);
